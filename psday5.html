@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // **********************************(Q1)**************************************************
+    function removeDuplicates(arr1) {
+  const uniqueArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < uniqueArr.length; j++) {
+      if (arr1[i] === uniqueArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      uniqueArr.push(arr1[i]);
+    }
+  }
+  return uniqueArr;
+}
+
+// Example usage
+const arr1 = [1, 2, 2, 3, 4, 4, 5];
+const uniqueArr = removeDuplicates(arr1);
+console.log(uniqueArr);  // Output: [1, 2, 3, 4, 5]
+
+
+        function countOccurrences(arr) {
+        const countObj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (countObj[arr[i]] !== undefined) {
+      countObj[arr[i]]++;
+    } else {
+      countObj[arr[i]] = 1;
+    }
+  }
+  return countObj;
+}
+
+const arr = [1, 2, 2, 3, 3, 3, 4, 5];
+const occurrenceCount = countOccurrences(arr);
+console.log(occurrenceCount);
+// Output: { '1': 1, '2': 2, '3': 3, '4': 1, '5': 1 }
+
+    </script>
+</body>
+</html>
